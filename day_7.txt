@@ -1,0 +1,77 @@
+ create a array with 1000 numbers  linear , Binary and compare the result
+--------------------------------------------------------------------------------
+
+% Generate an array with 1000 random numbers
+ array = randi([1, 10000], 1, 1000);
+ target = array(randi([1, 1000])); % Select a random target from the array
+ 
+ % Linear Search
+ tic;
+ found = false;
+ for i = 1:length(array)
+     if array(i) == target
+         found = true;
+         break;
+     end
+ end
+ linearSearchTime = toc;
+ 
+ % Binary Search (After sorting)
+ sortedArray = sort(array); % Sort the array first
+ tic;
+ left = 1;
+ right = length(sortedArray);
+ found = false;
+ while left <= right
+     mid = floor((left + right) / 2);
+     if sortedArray(mid) == target
+         found = true;
+         break;
+     elseif sortedArray(mid) < target
+         left = mid + 1;
+     else
+         right = mid - 1;
+     end
+ end
+ binarySearchTime = toc;
+ 
+ % Display results
+ fprintf('Linear Search Time: %.6f seconds\n', linearSearchTime);
+ fprintf('Binary Search Time: %.6f seconds\n', binarySearchTime);
+ 
+
+output: 
+ % Linear Search Time: 0.000626 seconds
+ % Binary Search Time: 0.001311 seconds
+
+=======================================================================================
+
+         Selection sort
+--------------------------------
+
+
+arr = [64, 25, 12, 22, 11];
+n = length(arr);
+
+for i = 1:n-1   %find the steps
+    min = i;
+    for j = i+1:n  %sort element
+        if arr(j) < arr(min)
+            min = j;
+        end
+    end
+    % Swap elements
+    if min ~= i
+        temp = arr(i);
+        arr(i) = arr(min);
+        arr(min) = temp;
+    end
+end
+
+disp('Sorted array:')
+disp(arr)
+
+
+output:
+%Sorted array: 11    12    22    25    64
+  
