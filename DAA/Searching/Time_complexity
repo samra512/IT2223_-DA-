@@ -1,0 +1,32 @@
+ % Time Complexity
+-----------------------------------
+
+n=1000;
+tic; %starting time
+for i=1:n
+    disp(i)
+end
+
+elapsedTime=toc; %end time end store elapsedTime
+
+fprintf('Elapsed time:%fseconds\n',elapsedTime);
+
+output:
+n=10    Elapsed time:0.001493seconds
+n=100   Elapsed time:0.002880seconds
+n=1000  Elapsed time:0.027589seconds
+
+===============================================================================
+n=5;
+tic;
+if n==5
+    disp('n is 5')
+else
+    disp('n is not 5')
+end
+elapsedTime=toc;
+fprintf('Elapsed time:%fseconds\n',elapsedTime);
+
+output:
+Elapsed time:0.014164seconds
+
