@@ -1,0 +1,35 @@
+
+               % Binary Search
+        --------------------------------
+
+arr = [3,6,8,12,14,17,25,29,31,36,42,47,53,55,62]; % Sorted array
+tar = 42; % Target element
+low = 1;
+high = length(arr);
+found = false;
+
+tic; % Start timing
+while low <= high
+    mid = floor((low + high) / 2); % Calculate middle index
+    
+    if arr(mid) == tar
+        fprintf('Index of target element: %d\n', mid);
+        found = true;
+        break;
+    elseif arr(mid) < tar
+        low = mid + 1; % Move to the right half
+    else
+        high = mid - 1; % Move to the left half
+    end
+end
+
+if ~found
+    disp('Element not found');
+end
+elapsedTime = toc; % Stop timing
+fprintf('Elapsed time: %f seconds\n', elapsedTime);
+
+
+output:
+Index of target element: 11
+Elapsed time: 0.027384 seconds
