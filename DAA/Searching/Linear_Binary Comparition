@@ -1,0 +1,60 @@
+create a array with 1000 numbers  linear , Binary and compare the result
+--------------------------------------------------------------------------------
+
+% Generate an array with 1000 random numbers
+ array = 1:1000;
+ target =400; % Select a random target from the array
+ 
+ % Linear Search
+ tic;
+ found = false;
+ for i = 1:length(array)
+     if array(i) == target
+         found = true;
+         break;
+     end
+ end
+ linearSearchTime = toc;
+ 
+ % Binary Search (After sorting)
+ sortedArray = sort(array); % Sort the array first
+ tic;
+ left = 1;
+ right = length(sortedArray);
+ found = false;
+ while left <= right
+     mid = floor((left + right) / 2);
+     if sortedArray(mid) == target
+         found = true;
+         break;
+     elseif sortedArray(mid) < target
+         left = mid + 1;
+     else
+         right = mid - 1;
+     end
+ end
+ binarySearchTime = toc;
+ 
+ % Display results
+ fprintf('Linear Search Time: %.6f seconds\n', linearSearchTime);
+ fprintf('Binary Search Time: %.6f seconds\n', binarySearchTime);
+ -------------------------------------------------------------------------------------
+
+output: 
+%tar=400
+linear search Time:0.0047
+Binary search Time:0.0039
+
+%tar=500
+linear search Time:0.0011
+Binary search Time:0.0003
+
+%tar=700
+linear search Time:0.0014
+Binary search Time:0.0033
+
+%tar=990
+linear search Time:0.0009
+Binary search Time:0.0018
+
+       
