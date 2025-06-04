@@ -1,0 +1,135 @@
+1.function
+
+
+function sum=addNumbers(x,y) 
+sum=x+y;
+end
+addNumbers(3,4)
+
+output:
+functions(6,2)
+ans =
+     8
+Explanations:
+%function output=functionName(input)
+
+------------------------------------------------------------------------
+
+2.Simple Calculator 
+
+ function [sum,sub,Mul,div]=operations(x,y)
+ sum=x+y;
+ sub=x-y;
+ Mul=x*y;
+ div=x/y;
+ end
+ 
+ output:
+  
+ [sum,sub,Mul,div]=functions(6,2)
+ sum =
+      8
+ sub =
+      4
+ Mul =
+     12
+ div =
+      3
+
+-------------------------------------------------------------------------------------
+3.
+ function greet(name)
+ disp(['hello ',name]);
+ end
+ 
+ output:
+  functions('sam')
+ hello sam
+
+-----------------------------------------------------------------------
+
+4. 
+ function piValue = getpi()
+   piValue = 3.146
+ end
+ 
+ output:
+ functions
+ 
+ piValue =
+     3.1460 
+ ans =
+     3.1460
+
+ ---------------------------------------------------------------------------
+ 5.
+ function myFunction()
+  disp('hello, this is a function')
+ end
+ 
+ output:
+ functions
+ hello, this is a function
+
+---------------------------------------------------------------
+
+6.Factorail
+
+%factorial
+fact=1;
+x=5;
+for i=1:1:x
+    fact=fact*i;
+end
+fprintf('Factorial is:%d',fact);
+
+output:
+ functions
+Factorial is:120
+
+---------------------------------------------------------------------------
+//user input
+
+x=input('Enter the number:');
+fact=1;
+for i=1:x
+    fact=fact*i;
+end
+fprintf('Factorial is:%d',fact);
+
+output:
+functions
+Enter the number:5
+Factorial is:120
+
+-----------------------------------------------------------
+//using function
+ function result = factorialLoop(n)
+    result = 1;
+    for i = 1:n
+        result = result * i;
+    end
+end
+disp(['Factorial of 5 (Loop): ', num2str(factorialLoop(5))]);
+
+output:
+functions
+Factorial of 5 (Loop): 120
+
+-------------------------------------------------------------
+//Recursive
+
+function f= Fact(n)
+ if n==0 ||n==1
+     f=1
+ else
+     f=n*Fact(n-1);
+ end
+end
+ disp(['Factorial of 5 (Loop): ', num2str(Fact(5))]);
+
+ output:
+ functions
+f =
+     1
+Factorial of 5 (Loop): 120
