@@ -76,3 +76,51 @@ Nodes should be positive integers
  G1=graph(s1,t1);
  highlight(G1,'EdgeColor','Green');
    plot(G2);
+
+----------------------------------------------------------------
+s = [1 2 3 4 5 6 6 6 6 6 5 7 1 8 2 9 3 10 4 11 7 8 9 10 11];
+t = [2 3 4 5 1 1 2 3 4 5 7 1 8 2 9 3 10 4 11 5 6 6 6 6 6];
+G = graph(s,t);
+h = plot(G);
+greenEdge=[1 2; 2 3;3 4; 4 5;5 1];
+magentaEdge=[7 1;1 8;8 2;2 9;9 3;3 10;10 4;4 11;11 5; 5 7];
+
+%highlight green edge
+for i=1:size(greenEdge,1)
+    highlight(h,greenEdge(i,1),greenEdge(i,2),'EdgeColor','green')
+end
+
+%highlight magents edge
+for i=1:size(magentaEdge,1)
+    highlight(h,magentaEdge(i,1),magentaEdge(i,2),'EdgeColor','magenta')
+end
+
+--------------------------------------------------------------
+s = [1 2 3 4 5 6 6 6 6 6 5 7 1 8 2 9 3 10 4 11 7 8 9 10 11];
+t = [2 3 4 5 1 1 2 3 4 5 7 1 8 2 9 3 10 4 11 5 6 6 6 6 6];
+
+G = graph(s,t);
+h = plot(G);
+
+for node = 1:5
+    highlight(h, node, 6, "EdgeColor","yellow" );
+end
+
+for node = 7:11
+    highlight(h, node, 6, "EdgeColor","magenta" );
+end
+
+
+for node = 1:5
+    highlight(h, node, (mod(node, 5)+1), "EdgeColor","green");
+end
+
+for node = 1:5
+    highlight(h, node, node+6, "EdgeColor","black");
+end
+
+for node = 1:4
+    highlight(h, node, node+7, "EdgeColor","black");
+end
+
+highlight(h, 5,7, "EdgeColor","black");
