@@ -3,6 +3,8 @@ function runDFS()
     s = [1 1 2 2 3 3];
     t = [2 3 4 5 6 7];
     n = max([s t]);
+    G=graph(s,t);
+    plot(G);
 
     adjMatrix = zeros(n);
     for i = 1:length(s)
@@ -29,18 +31,8 @@ function runDFS()
     end
 end
 
+ ===========================================
 
-----------------------------------------------------------------
-
-output=>
-Adjacency Matrix:
-     0     1     1     0     0     0     0
-     0     0     0     1     1     0     0
-     0     0     0     0     0     1     1
-     0     0     0     0     0     0     0
-     0     0     0     0     0     0     0
-     0     0     0     0     0     0     0
-     0     0     0     0     0     0     0
-
-BFS Traversal starting from node 1:
-1 2 3 4 5 6 7 
+Output:
+DFS Traversal starting from node 1:
+1 2 4 5 3 6 7
